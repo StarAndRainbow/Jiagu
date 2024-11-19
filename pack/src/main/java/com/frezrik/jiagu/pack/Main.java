@@ -242,15 +242,24 @@ public class Main {
         }
 
         // *************** 6.签名apk *********************/
-        Log.d("签名APK");
-        File signedApk = new File(AppManager.OUT_DIR + apkFile.getName().substring(0,
-                apkFile.getName().length() - 4) + "_signed.apk");
-        try {
-            SignUtils.apkSignature(unsignedApk, signedApk, key, keyPwd, alias, aliasPwd);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Log.d("Finished!!!");
+//        Log.d("签名APK");
+//        File signedApk = new File(AppManager.OUT_DIR + apkFile.getName().substring(0,
+//                apkFile.getName().length() - 4) + "_signed.apk");
+//        try {
+//            SignUtils.apkSignature(unsignedApk, signedApk, key, keyPwd, alias, aliasPwd);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        Log.d("Finished!!!");
+        // todo 注释代码，重新打jar，测试v2签名，得使用grdle jdk 8得打包，不能使用11
+        //Exception in thread "main" java.lang.NoSuchMethodError: java.nio.ByteBuffer.position(I)Ljava/nio/ByteBuffer;
+        //	at com.frezrik.jiagu.pack.util.axml.StringItems.read(StringItems.java:45)
+        //	at com.frezrik.jiagu.pack.util.axml.AxmlParser.next(AxmlParser.java:242)
+        //	at com.frezrik.jiagu.pack.util.axml.AxmlReader.accept(AxmlReader.java:67)
+        //	at com.frezrik.jiagu.pack.util.axml.meditor.core.ManifestEditor.processManifest(ManifestEditor.java:62)
+        //	at com.frezrik.jiagu.pack.util.axml.meditor.core.FileProcesser.processManifestFile(FileProcesser.java:83)
+        //	at com.frezrik.jiagu.pack.util.AXmlUtil.updateManifest(AXmlUtil.java:23)
+        //	at com.frezrik.jiagu.pack.Main.main(Main.java:112)
     }
 
 }
